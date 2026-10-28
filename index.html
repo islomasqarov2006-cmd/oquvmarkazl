@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zukko O'quv Markazi - Kelajagingizni Biz Bilan Quring</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Poppins & Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',
+                            blue: '#1e40af',
+                            lightBlue: '#3b82f6',
+                            emerald: '#059669',
+                            orange: '#f97316',
+                            accent: '#f59e0b',
+                            bg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(5, 150, 105, 0.1), transparent 40%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-brand-bg font-sans text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-brand-blue to-brand-emerald rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-blue-500/20">
+                        Z
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-tight text-slate-900">ZUKKO</span>
+                        <span class="block text-xs font-semibold text-brand-emerald uppercase tracking-wider">O'quv Markazi</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#about" class="hover:text-brand-blue transition-colors py-2">Biz haqimizda</a>
+                    <a href="#courses" class="hover:text-brand-blue transition-colors py-2">Kurslar</a>
+                    <a href="#calculator" class="hover:text-brand-blue transition-colors py-2">Kalkulyator</a>
+                    <a href="#teachers" class="hover:text-brand-blue transition-colors py-2">O'qituvchilar</a>
+                    <a href="#testimonials" class="hover:text-brand-blue transition-colors py-2">Fikrlar</a>
+                    <a href="#contact" class="hover:text-brand-blue transition-colors py-2">Bog'lanish</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:+998901234567" class="text-sm font-bold text-slate-700 hover:text-brand-blue">
+                        <i class="fa-solid fa-phone text-brand-emerald mr-2"></i>+998 (90) 123-45-67
+                    </a>
+                    <a href="#register" class="bg-brand-blue hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Yozilish
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Biz haqimizda</a>
+            <a href="#courses" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Kurslar</a>
+            <a href="#calculator" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Kalkulyator</a>
+            <a href="#teachers" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">O'qituvchilar</a>
+            <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Fikrlar</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Bog'lanish</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="#register" class="w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-xl shadow">
+                    Kursga Yozilish
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 1. Hero Section -->
+        <section class="relative hero-gradient py-16 md:py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-brand-blue text-xs md:text-sm font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
+                            Yangi Qabul Boshlandi! 2026-Mavsum
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                            Kelajagingizni <span class="gradient-text">Biz Bilan</span> Birga Quring!
+                        </h1>
+                        <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Zamonaviy kasblar, IELTS/CEFR ingliz tili hamda aniq fanlar bo'yicha eng tajribali ustozlardan sifatli ta'lim oling va orzuingizdagi natijaga erishing.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#register" class="w-full sm:w-auto bg-brand-emerald hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 text-center">
+                                Kurslarga Yozilish <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#courses" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 font-semibold px-8 py-4 rounded-xl border border-slate-200 shadow-sm hover:shadow transition-all text-center">
+                                Kurslarni Ko'rish
+                            </a>
+                        </div>
+                        
+                        <!-- Mini Highlights -->
+                        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200/60 max-w-md mx-auto lg:mx-0">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-blue">2,500+</h3>
+                                <p class="text-xs sm:text-sm font-medium text-slate-500">Baho olgan bitiruvchilar</p>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-emerald">95%</h3>
+                                <p class="text-xs sm:text-sm font-medium text-slate-500">Muvaffaqiyat ko'rsatkichi</p>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-orange">25+</h3>
+                                <p class="text-xs sm:text-sm font-medium text-slate-500">Malakali ustozlar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual / Feature Card Container -->
+                    <div class="relative flex justify-center">
+                        <div class="relative w-full max-w-lg">
+                            <!-- Background Decor -->
+                            <div class="absolute -top-4 -left-4 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
+                            <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl"></div>
+                            
+                            <!-- Hero Card -->
+                            <div class="relative bg-white p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-100 space-y-6">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-14 h-14 bg-emerald-100 text-brand-emerald rounded-2xl flex items-center justify-center text-2xl font-bold">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-bold text-slate-800">Sifatli Ta'lim Kafolati</h4>
+                                        <p class="text-xs text-slate-500">Har bir o'quvchiga individual yondashuv</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                                        <div class="flex items-center space-x-3">
+                                            <i class="fa-solid fa-check-circle text-brand-emerald text-lg"></i>
+                                            <span class="text-sm font-medium text-slate-700">IELTS / CEFR Sertifikatlari</span>
+                                        </div>
+                                        <span class="text-xs font-bold text-brand-blue">7.5+ O'rtacha</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                                        <div class="flex items-center space-x-3">
+                                            <i class="fa-solid fa-laptop-code text-brand-blue text-lg"></i>
+                                            <span class="text-sm font-medium text-slate-700">IT va Amaliy Loyihalar</span>
+                                        </div>
+                                        <span class="text-xs font-bold bg-blue-100 text-brand-blue px-2 py-0.5 rounded">Real Case</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                                        <div class="flex items-center space-x-3">
+                                            <i class="fa-solid fa-user-tie text-brand-orange text-lg"></i>
+                                            <span class="text-sm font-medium text-slate-700">Xalqaro Sertifikatli Ustozlar</span>
+                                        </div>
+                                        <span class="text-xs font-bold text-slate-600">Top Mutaxassislar</span>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl text-white flex items-center justify-between shadow-lg">
+                                    <div>
+                                        <p class="text-xs text-blue-100">Sinov darsiga yoziling</p>
+                                        <p class="text-sm font-bold">Birinchi dars BEPUL!</p>
+                                    </div>
+                                    <a href="#register" class="bg-white text-brand-blue text-xs font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors">
+                                        Sinab ko'rish
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Course Showcase (Kurslarimiz) -->
+        <section id="courses" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-blue font-bold mb-2">Bizning Yo'nalishlar</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">O'zingiz uchun mos kursni tanlang</h3>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base">Zamonaviy talablarga javob beradigan sifatli ta'lim dasturlari</p>
+                    
+                    <!-- Category Filters -->
+                    <div class="flex flex-wrap justify-center gap-2 mt-8" id="course-filters">
+                        <button onclick="filterCourses('all')" class="filter-btn active-filter px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand-blue text-white shadow-md">
+                            Barchasi
+                        </button>
+                        <button onclick="filterCourses('language')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">
+                            Tillar
+                        </button>
+                        <button onclick="filterCourses('it')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">
+                            IT & Dasturlash
+                        </button>
+                        <button onclick="filterCourses('exact')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">
+                            Aniq Fanlar
+                        </button>
+                        <button onclick="filterCourses('kids')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">
+                            Bolalar uchun
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="course-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white" data-category="language">
+                        <div>
+                            <div class="h-48 bg-gradient-to-r from-blue-600 to-indigo-600 p-6 flex flex-col justify-between relative overflow-hidden">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full w-max">Ingliz tili</span>
+                                <i class="fa-solid fa-language absolute -right-4 -bottom-4 text-8xl text-white/10"></i>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">IELTS Rocket 7.5+</h4>
+                                    <p class="text-blue-100 text-xs">Jadal tayyorgarlik kursi</p>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 border-b border-slate-100 pb-3">
+                                    <span><i class="fa-regular fa-clock text-brand-blue mr-1"></i> 6 Oy</span>
+                                    <span><i class="fa-solid fa-signal text-brand-emerald mr-1"></i> B2 - C1</span>
+                                    <span><i class="fa-regular fa-calendar-check text-brand-orange mr-1"></i> Haftada 3 kun</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">
+                                    IELTS imtihonida yuqori ball olish uchun barcha modullar (Listening, Reading, Writing, Speaking) bo'yicha professional tayyorgarlik.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-50">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Oylik to'lov</span>
+                                <span class="text-xl font-bold text-slate-900">650 000 <span class="text-xs font-normal">SO'M</span></span>
+                            </div>
+                            <button onclick="selectCourse('IELTS Rocket 7.5+')" class="bg-blue-50 hover:bg-brand-blue hover:text-white text-brand-blue font-semibold px-4 py-2.5 rounded-xl text-sm transition-colors">
+                                Yozilish
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="course-card border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white" data-category="it">
+                        <div>
+                            <div class="h-48 bg-gradient-to-r from-emerald-600 to-teal-600 p-6 flex flex-col justify-between relative overflow-hidden">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full w-max">Dasturlash</span>
+                                <i class="fa-solid fa-code absolute -right-4 -bottom-4 text-8xl text-white/10"></i>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">Full-Stack Web Dev</h4>
+                                    <p class="text-emerald-100 text-xs">HTML, CSS, JS, React, Node.js</p>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 border-b border-slate-100 pb-3">
+                                    <span><i class="fa-regular fa-clock text-brand-blue mr-1"></i> 9 Oy</span>
+                                    <span><i class="fa-solid fa-signal text-brand-emerald mr-1"></i> Boshlang'ich</span>
+                                    <span><i class="fa-regular fa-calendar-check text-brand-orange mr-1"></i> Haftada 3 kun</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">
+                                    Zamonaviy veb-saytlar va ilovalar yaratishni noldan o'rganing. Portfolio va real loyihalar ustida ishlash imkoniyati.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-50">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Oylik to'lov</span>
+                                <span class="text-xl font-bold text-slate-900">850 000 <span class="text-xs font-normal">SO'M</span></span>
+                            </div>
+                            <button onclick="selectCourse('Full-Stack Web Dev')" class="bg-blue-50 hover:bg-brand-blue hover:text-white text-brand-blue font-semibold px-4 py-2.5 rounded-xl text-sm transition-colors">
+                                Yozilish
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="course-card border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white" data-category="exact">
+                        <div>
+                            <div class="h-48 bg-gradient-to-r from-orange-500 to-amber-600 p-6 flex flex-col justify-between relative overflow-hidden">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full w-max">Aniq fanlar</span>
+                                <i class="fa-solid fa-calculator absolute -right-4 -bottom-4 text-8xl text-white/10"></i>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">Oliy Matematika & Fizika</h4>
+                                    <p class="text-amber-100 text-xs">DTM va West / INHA tayyorlov</p>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 border-b border-slate-100 pb-3">
+                                    <span><i class="fa-regular fa-clock text-brand-blue mr-1"></i> 8 Oy</span>
+                                    <span><i class="fa-solid fa-signal text-brand-emerald mr-1"></i> Har qanday</span>
+                                    <span><i class="fa-regular fa-calendar-check text-brand-orange mr-1"></i> Haftada 3 kun</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">
+                                    Respublika va xalqaro oliygohlarga kirish imtihonlariga chuqurlashtirilgan nazariy va amaliy tayyorgarlik.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-50">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Oylik to'lov</span>
+                                <span class="text-xl font-bold text-slate-900">550 000 <span class="text-xs font-normal">SO'M</span></span>
+                            </div>
+                            <button onclick="selectCourse('Oliy Matematika')" class="bg-blue-50 hover:bg-brand-blue hover:text-white text-brand-blue font-semibold px-4 py-2.5 rounded-xl text-sm transition-colors">
+                                Yozilish
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div class="course-card border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white" data-category="kids">
+                        <div>
+                            <div class="h-48 bg-gradient-to-r from-purple-600 to-pink-600 p-6 flex flex-col justify-between relative overflow-hidden">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full w-max">Bolalar uchun</span>
+                                <i class="fa-solid fa-brain absolute -right-4 -bottom-4 text-8xl text-white/10"></i>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">Mental Arifmetika</h4>
+                                    <p class="text-purple-100 text-xs">6 - 12 yoshdagi bolalar uchun</p>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 border-b border-slate-100 pb-3">
+                                    <span><i class="fa-regular fa-clock text-brand-blue mr-1"></i> 4 Oy</span>
+                                    <span><i class="fa-solid fa-signal text-brand-emerald mr-1"></i> Boshlang'ich</span>
+                                    <span><i class="fa-regular fa-calendar-check text-brand-orange mr-1"></i> Haftada 2 kun</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">
+                                    Miyaning har ikki yarim sharini rivojlantirish, tezkor mental hisoblash, diqqat va xotirani kuchaytirish kursi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-50">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Oylik to'lov</span>
+                                <span class="text-xl font-bold text-slate-900">450 000 <span class="text-xs font-normal">SO'M</span></span>
+                            </div>
+                            <button onclick="selectCourse('Mental Arifmetika')" class="bg-blue-50 hover:bg-brand-blue hover:text-white text-brand-blue font-semibold px-4 py-2.5 rounded-xl text-sm transition-colors">
+                                Yozilish
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div class="course-card border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white" data-category="language">
+                        <div>
+                            <div class="h-48 bg-gradient-to-r from-cyan-600 to-blue-600 p-6 flex flex-col justify-between relative overflow-hidden">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full w-max">Tillar</span>
+                                <i class="fa-solid fa-comments absolute -right-4 -bottom-4 text-8xl text-white/10"></i>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">Rus Tili (Razgovor)</h4>
+                                    <p class="text-cyan-100 text-xs">So'zlashuv va Grammatika</p>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 border-b border-slate-100 pb-3">
+                                    <span><i class="fa-regular fa-clock text-brand-blue mr-1"></i> 3 Oy</span>
+                                    <span><i class="fa-solid fa-signal text-brand-emerald mr-1"></i> Har qanday</span>
+                                    <span><i class="fa-regular fa-calendar-check text-brand-orange mr-1"></i> Haftada 3 kun</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">
+                                    Erkin muloqot qilish, to'g'ri talaffuz va kundalik hayotda kerakli bo'lgan rus tili grammatikasini o'zlashtirish.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-50">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Oylik to'lov</span>
+                                <span class="text-xl font-bold text-slate-900">500 000 <span class="text-xs font-normal">SO'M</span></span>
+                            </div>
+                            <button onclick="selectCourse('Rus Tili Razgovor')" class="bg-blue-50 hover:bg-brand-blue hover:text-white text-brand-blue font-semibold px-4 py-2.5 rounded-xl text-sm transition-colors">
+                                Yozilish
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div class="course-card border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white" data-category="it">
+                        <div>
+                            <div class="h-48 bg-gradient-to-r from-rose-600 to-red-600 p-6 flex flex-col justify-between relative overflow-hidden">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full w-max">Dizayn</span>
+                                <i class="fa-solid fa-pen-nib absolute -right-4 -bottom-4 text-8xl text-white/10"></i>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">Grafik & UI/UX Dizayn</h4>
+                                    <p class="text-rose-100 text-xs">Figma, Photoshop, Illustrator</p>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 border-b border-slate-100 pb-3">
+                                    <span><i class="fa-regular fa-clock text-brand-blue mr-1"></i> 5 Oy</span>
+                                    <span><i class="fa-solid fa-signal text-brand-emerald mr-1"></i> Boshlang'ich</span>
+                                    <span><i class="fa-regular fa-calendar-check text-brand-orange mr-1"></i> Haftada 3 kun</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">
+                                    Veb-saytlar va mobil ilovalar dizaynini yaratish, brending va vizual kontent yaratish sirlarini o'rganing.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-50">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Oylik to'lov</span>
+                                <span class="text-xl font-bold text-slate-900">700 000 <span class="text-xs font-normal">SO'M</span></span>
+                            </div>
+                            <button onclick="selectCourse('Grafik Dizayn')" class="bg-blue-50 hover:bg-brand-blue hover:text-white text-brand-blue font-semibold px-4 py-2.5 rounded-xl text-sm transition-colors">
+                                Yozilish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Interactive Course Fee Calculator / Course Finder -->
+        <section id="calculator" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-emerald/20 rounded-full blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-brand-emerald font-bold text-xs uppercase tracking-widest block mb-2">Interaktiv Kalkulyator</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">O'qish narxini hisoblang va chegirmaga ega bo'ling!</h2>
+                        <p class="text-slate-300 text-sm sm:text-base mb-6 leading-relaxed">
+                            Yo'nalish, darslar jadvali va davomiylikni tanlang, biz sizga mos narx va chegirmalarni taklif qilamiz.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-brand-emerald flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-percent"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-white text-sm">Oldindan to'lov chegirmasi</h5>
+                                    <p class="text-xs text-slate-400">Butun kurs uchun to'lov qilganda 15% gacha chegirma</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-brand-lightBlue flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-white text-sm">Do'stingiz bilan keling</h5>
+                                    <p class="text-xs text-slate-400">Har bir do'stingiz uchun birinchi oyga 10% chegirma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Form Card -->
+                    <div class="bg-slate-800/90 border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-md">
+                        <form id="calc-form" class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Yo'nalishni tanlang</label>
+                                <select id="calc-subject" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-lightBlue">
+                                    <option value="english" data-price="650000">Ingliz tili (IELTS / CEFR)</option>
+                                    <option value="it" data-price="850000">IT & Dasturlash</option>
+                                    <option value="math" data-price="550000">Matematika va Fizika</option>
+                                    <option value="russian" data-price="500000">Rus tili</option>
+                                    <option value="mental" data-price="450000">Mental Arifmetika</option>
+                                    <option value="design" data-price="700000">Grafik Dizayn</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Dars chastotasi</label>
+                                    <select id="calc-intensity" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-lightBlue">
+                                        <option value="1">Standart (3 kun / 1.5 soat)</option>
+                                        <option value="1.3">Intensiv (5 kun / 2 soat)</option>
+                                        <option value="0.8">Dam olish kunlari (Weekend)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">To'lov shakli</label>
+                                    <select id="calc-payment" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-lightBlue">
+                                        <option value=" monthly">Oylik to'lov</option>
+                                        <option value="full">To'liq kurs (15% chegirma)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Taxminiy oylik qiymat:</span>
+                                    <span id="calc-result" class="text-3xl font-extrabold text-brand-emerald">650 000 UZS</span>
+                                </div>
+                                <a href="#register" class="w-full sm:w-auto bg-brand-lightBlue hover:bg-blue-600 text-white font-bold px-6 py-3 rounded-xl text-center text-sm transition-all shadow-md">
+                                    Shu narxda yozilish
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Why Us? (Nega aynan biz?) -->
+        <section id="about" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-blue font-bold mb-2">Afzalliklarimiz</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Nega aynan ZUKKO markazini tanlashadi?</h3>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base">Biz o'quvchilarimizga faqat nazariy bilim emas, amaliy ko'nikmalar va yuqori natija beramiz</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Advantage 1 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-14 h-14 bg-blue-100 text-brand-blue rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Tajribali O'qituvchilar</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ustozlarimiz xalqaro sertifikatlar (IELTS 8.5+, CELTA, Senior Dev) hamda ko'p yillik ta'lim berish tajribasiga ega.
+                        </p>
+                    </div>
+
+                    <!-- Advantage 2 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-14 h-14 bg-emerald-100 text-brand-emerald rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-laptop text-brand-emerald"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Zamonaviy Xonalar</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Shinam va barcha texnik vositalar (kompyuterlar, interaktiv doskalar, tezkor Wi-Fi) bilan ta'minlangan qulay sharoitlar.
+                        </p>
+                    </div>
+
+                    <!-- Advantage 3 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-14 h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Rasmiy Sertifikat</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Kursni muvaffaqiyatli tamomlagan o'quvchilarga mehnat bozorida va oliygohlarda tan olinadigan maxsus sertifikat beriladi.
+                        </p>
+                    </div>
+
+                    <!-- Advantage 4 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Amaliy Loyihalar</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Qaerda o'qishingizdan qat'iy nazar, faqat qoidalarni yodlamaysiz – amaliy topshiriqlar va real loyihalar bajarasiz.
+                        </p>
+                    </div>
+
+                    <!-- Advantage 5 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Qulay Vaqtlar</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ertalabki, tushdan keyingi va kechki guruhlar mavjud. Maktab, litsey yoki ish vaqtingizga mos jadvalni tanlang.
+                        </p>
+                    </div>
+
+                    <!-- Advantage 6 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-14 h-14 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Bepul Speaking Club & Co-working</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Barcha o'quvchilarimiz uchun har dam olish kuni native-speakerlar bilan bepul Speaking va Co-working zonasi ochiq.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Teacher Profiles (O'qituvchilarimiz) -->
+        <section id="teachers" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-blue font-bold mb-2">Mutaxassislarimiz</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Malakali O'qituvchilarimiz</h3>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base">Sizga muvaffaqiyat kalitini topshiradigan va o'z sohasining ustalari bo'lgan ustozlar</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Teacher 1 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden flex items-end justify-center">
+                            <img src="https://placehold.co/400x400/1e40af/ffffff?text=Javohir+A." alt="Javohir Alimov" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-blue">
+                                IELTS 8.5
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-slate-900">Javohir Alimov</h4>
+                            <p class="text-xs font-semibold text-brand-emerald mb-3">Bosh Ingliz tili ustozi</p>
+                            <p class="text-xs text-slate-500 mb-4">6 yillik tajriba, Cambridge CELTA sertifikati egasi. 100+ o'quvchisi 7.5+ olgan.</p>
+                            <div class="flex items-center text-xs text-slate-400 gap-2 border-t border-slate-200 pt-3">
+                                <span><i class="fa-solid fa-book-open text-brand-blue"></i> IELTS / General</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 2 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden flex items-end justify-center">
+                            <img src="https://placehold.co/400x400/059669/ffffff?text=Malika+K." alt="Malika Karimova" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-emerald">
+                                Senior Dev
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-slate-900">Malika Karimova</h4>
+                            <p class="text-xs font-semibold text-brand-emerald mb-3">Frontend / React Instruktor</p>
+                            <p class="text-xs text-slate-500 mb-4">5 yildan ortiq xalqaro IT kompaniyalarda tajriba. Web-dasturlash bo'yicha mutaxassis.</p>
+                            <div class="flex items-center text-xs text-slate-400 gap-2 border-t border-slate-200 pt-3">
+                                <span><i class="fa-solid fa-code text-brand-emerald"></i> Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 3 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden flex items-end justify-center">
+                            <img src="https://placehold.co/400x400/f97316/ffffff?text=Sardor+R." alt="Sardor Rahimov" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-orange">
+                                Oliy Toifa
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-slate-900">Sardor Rahimov</h4>
+                            <p class="text-xs font-semibold text-brand-emerald mb-3">Matematika va Fizika ustozi</p>
+                            <p class="text-xs text-slate-500 mb-4">Olimpiada g'olibi va WESTMINSTER universiteti bitiruvchisi. 8 yillik repetitorlik staji.</p>
+                            <div class="flex items-center text-xs text-slate-400 gap-2 border-t border-slate-200 pt-3">
+                                <span><i class="fa-solid fa-square-root-variable text-brand-orange"></i> DTM / SAT Math</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 4 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden flex items-end justify-center">
+                            <img src="https://placehold.co/400x400/9333ea/ffffff?text=Elena+S." alt="Elena Smirnova" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-purple-600">
+                                Native Speaker
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-slate-900">Elena Smirnova</h4>
+                            <p class="text-xs font-semibold text-brand-emerald mb-3">Rus tili mutaxassisi</p>
+                            <p class="text-xs text-slate-500 mb-4">Filologiya fanlari nomzodi. Jonli muloqot va nutqni o'stirish bo'yicha maxsus metodika.</p>
+                            <div class="flex items-center text-xs text-slate-400 gap-2 border-t border-slate-200 pt-3">
+                                <span><i class="fa-solid fa-comments text-purple-600"></i> Rus tili / Grammatika</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Online Registration Form (Kursga Yozilish) -->
+        <section id="register" class="py-20 bg-gradient-to-br from-brand-navy via-slate-900 to-blue-950 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto bg-slate-800/80 rounded-3xl border border-slate-700 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="bg-brand-emerald/20 text-brand-emerald px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider inline-block mb-3">
+                            Cheklangan Joylar
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Bepul Sinov Darsiga Yoziling</h2>
+                        <p class="text-slate-300 text-sm mt-2">Ma'lumotlaringizni qoldiring, administratorimiz 15 daqiqa ichida siz bilan bog'lanadi</p>
+                    </div>
+
+                    <form id="registration-form" onsubmit="handleRegistration(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name Input -->
+                            <div>
+                                <label for="reg-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Ism va Familiyangiz *</label>
+                                <div class="relative">
+                                    <i class="fa-regular fa-user absolute left-4 top-3.5 text-slate-400"></i>
+                                    <input type="text" id="reg-name" required placeholder="Masalan: Ali Valiyev" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-11 pr-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-emerald transition-colors">
+                                </div>
+                            </div>
+
+                            <!-- Phone Input -->
+                            <div>
+                                <label for="reg-phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Telefon Raqamingiz *</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-phone absolute left-4 top-3.5 text-slate-400"></i>
+                                    <input type="tel" id="reg-phone" required placeholder="+998 (90) 123-45-67" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-11 pr-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-emerald transition-colors">
+                                </div>
+                            </div>
+
+                            <!-- Course Selection -->
+                            <div>
+                                <label for="reg-course" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tanlangan Kurs *</label>
+                                <select id="reg-course" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-emerald transition-colors">
+                                    <option value="" disabled selected>Kursni tanlang</option>
+                                    <option value="IELTS Rocket 7.5+">IELTS Rocket 7.5+</option>
+                                    <option value="Full-Stack Web Dev">Full-Stack Web Dev</option>
+                                    <option value="Oliy Matematika">Oliy Matematika & Fizika</option>
+                                    <option value="Mental Arifmetika">Mental Arifmetika</option>
+                                    <option value="Rus Tili Razgovor">Rus Tili (Razgovor)</option>
+                                    <option value="Grafik Dizayn">Grafik & UI/UX Dizayn</option>
+                                </select>
+                            </div>
+
+                            <!-- Preferred Time -->
+                            <div>
+                                <label for="reg-time" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Qulay Vaqt</label>
+                                <select id="reg-time" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-emerald transition-colors">
+                                    <option value="Ertalab (09:00 - 12:00)">Ertalab (09:00 - 12:00)</option>
+                                    <option value="Tushdan keyin (14:00 - 17:00)">Tushdan keyin (14:00 - 17:00)</option>
+                                    <option value="Kechki (18:00 - 21:00)">Kechki (18:00 - 21:00)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="reg-agree" required class="w-4 h-4 rounded text-brand-emerald focus:ring-brand-emerald bg-slate-900 border-slate-700">
+                            <label for="reg-agree" class="text-xs text-slate-400">
+                                Shaxsiy ma'lumotlarim qayta ishlanishiga roziman va <a href="#" class="text-brand-emerald underline">shartlar</a> bilan tanishdim.
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-emerald to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold py-4 rounded-xl text-base shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+                            Ariza Yuborish <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Testimonials / Student Reviews (O'quvchilarimiz fikrlari) -->
+        <section id="testimonials" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-blue font-bold mb-2">Muvaffaqiyat Tarixlari</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">O'quvchilarimiz va Bitiruvchilar Fikri</h3>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base">ZUKKO o'quv markazida ta'lim olgan talabalarning erishgan natijalari</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "ZUKKO markazida IELTS kursini 5 oy davomida o'qidim va birinchi urinishdayoq 7.5 ball oldim! Ustozlarga alohida rahmat, Speaking Club juda katta yordam berdi."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-slate-100">
+                            <img src="https://placehold.co/100x100/3b82f6/ffffff?text=A" alt="Azizbek S." class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <h5 class="text-sm font-bold text-slate-900">Azizbek Sobirov</h5>
+                                <span class="text-xs text-brand-blue font-medium">IELTS 7.5 Egalari</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "Full-stack dasturlash kursini bitirib, hozirda IT-kompaniyada Junior Dasturchi bo'lib ishlayapman. Darslar amaliyotga boy va tushunarli o'tildi."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-slate-100">
+                            <img src="https://placehold.co/100x100/059669/ffffff?text=N" alt="Nigora T." class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <h5 class="text-sm font-bold text-slate-900">Nigora Toshpulotova</h5>
+                                <span class="text-xs text-brand-emerald font-medium">Frontend Developer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "O'g'limni Mental Arifmetika kursiga bergan edik. Diqqat-e'tibori va hisoblash tezligi keskin oshdi. Markaz atmosferasi va ustozlar muomalasi a'lo darajada!"
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-slate-100">
+                            <img src="https://placehold.co/100x100/f97316/ffffff?text=D" alt="Dilfuza M." class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <h5 class="text-sm font-bold text-slate-900">Dilfuza Mirzayeva</h5>
+                                <span class="text-xs text-brand-orange font-medium">O'quvchi Validası</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact & Location (Bog'lanish va Manzil) -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-xs uppercase tracking-widest text-brand-blue font-bold mb-2">Bog'lanish</h2>
+                            <h3 class="text-3xl font-extrabold text-slate-900">Savollaringiz bormi? Biz bilan bog'laning</h3>
+                            <p class="text-slate-600 text-sm mt-3">
+                                Har kuni soat 08:00 dan 20:00 gacha sizga yordam berishdan mamnunmiz.
+                            </p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-base">Manzilimiz</h5>
+                                    <p class="text-sm text-slate-600">Toshkent shahri, Yunusobod tumani, Amir Temur ko'chasi 108-uy</p>
+                                    <span class="text-xs text-slate-400">Mo'ljal: Minor metro bekati ro'parasi</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-emerald-50 text-brand-emerald rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-base">Telefon raqamlar</h5>
+                                    <p class="text-sm text-slate-600">+998 (90) 123-45-67</p>
+                                    <p class="text-sm text-slate-600">+998 (71) 200-00-00</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-sky-50 text-sky-500 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                    <i class="fa-paper-plane fa-solid"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 text-base">Ijtimoiy Tarmoqlar</h5>
+                                    <div class="flex space-x-3 mt-2">
+                                        <a href="#" class="w-9 h-9 bg-slate-100 hover:bg-brand-blue hover:text-white rounded-xl flex items-center justify-center text-slate-600 transition-colors">
+                                            <i class="fa-brands fa-telegram"></i>
+                                        </a>
+                                        <a href="#" class="w-9 h-9 bg-slate-100 hover:bg-pink-600 hover:text-white rounded-xl flex items-center justify-center text-slate-600 transition-colors">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href="#" class="w-9 h-9 bg-slate-100 hover:bg-red-600 hover:text-white rounded-xl flex items-center justify-center text-slate-600 transition-colors">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Styled Map Placeholder -->
+                    <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-md h-96 lg:h-full min-h-[350px] relative bg-slate-100 flex items-center justify-center">
+                        <iframe 
+                            title="Location Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.679169463282!2d69.27973717658933!3d41.3375806984252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b5344a19cfd%3A0x633d9401777b758!2sMinor%20Metro%20Station!5e0!3m2!1sen!2suz!4v1700000000000!5m2!1sen!2suz" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Feedback Notification -->
+    <div id="success-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center shadow-2xl space-y-4 border border-slate-100 transform transition-all">
+            <div class="w-16 h-16 bg-emerald-100 text-brand-emerald rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Arizangiz Qabul Qilindi!</h3>
+            <p id="modal-msg" class="text-sm text-slate-600 leading-relaxed">
+                Rahmat! Tez orada ko'rsatilgan telefon raqamingiz bo'yicha bog'lanib, bepul sinov darsi vaqtini tasdiqlaymiz.
+            </p>
+            <button onclick="closeModal()" class="w-full bg-brand-blue hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-colors text-sm">
+                Tushundim
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-brand-blue to-brand-emerald rounded-xl flex items-center justify-center text-white text-xl font-black">
+                        Z
+                    </div>
+                    <span class="text-xl font-bold text-white tracking-tight">ZUKKO O'quv Markazi</span>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-xs text-slate-500 text-center">
+                    &copy; 2026 ZUKKO Learning Center. Barcha huquqlar himoyalangan.
+                </p>
+
+                <!-- Socials -->
+                <div class="flex space-x-4 text-sm">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Course Category Filter Logic
+        function filterCourses(category) {
+            const cards = document.querySelectorAll('.course-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-blue', 'text-white', 'shadow-md');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+
+            event.target.classList.remove('bg-slate-100', 'text-slate-600');
+            event.target.classList.add('bg-brand-blue', 'text-white', 'shadow-md');
+
+            // Show/Hide cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Fee Calculator Logic
+        const subjectSelect = document.getElementById('calc-subject');
+        const intensitySelect = document.getElementById('calc-intensity');
+        const paymentSelect = document.getElementById('calc-payment');
+        const calcResult = document.getElementById('calc-result');
+
+        function updatePrice() {
+            const selectedOption = subjectSelect.options[subjectSelect.selectedIndex];
+            const basePrice = parseFloat(selectedOption.getAttribute('data-price')) || 500000;
+            const intensityMultiplier = parseFloat(intensitySelect.value) || 1;
+            const isFullPayment = paymentSelect.value === 'full';
+
+            let finalPrice = basePrice * intensityMultiplier;
+            
+            if (isFullPayment) {
+                finalPrice = finalPrice * 0.85; // 15% discount
+            }
+
+            // Round to thousands
+            finalPrice = Math.round(finalPrice / 1000) * 1000;
+
+            calcResult.textContent = finalPrice.toLocaleString('uz-UZ') + ' UZS' + (isFullPayment ? ' (Jami)' : '');
+        }
+
+        subjectSelect.addEventListener('change', updatePrice);
+        intensitySelect.addEventListener('change', updatePrice);
+        paymentSelect.addEventListener('change', updatePrice);
+
+        // Pre-select course from Course Card button
+        function selectCourse(courseName) {
+            const courseSelect = document.getElementById('reg-course');
+            courseSelect.value = courseName;
+            
+            // Scroll to registration form
+            const regSection = document.getElementById('register');
+            regSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Registration Form Handling
+        function handleRegistration(e) {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const course = document.getElementById('reg-course').value;
+
+            const modalMsg = document.getElementById('modal-msg');
+            modalMsg.textContent = `Rahmat, ${name}! "${course}" kursi bo'yicha arizangiz qabul qilindi. Operatorlarimiz tez orada siz bilan bog'lanishadi.`;
+
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('registration-form').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Initial price calculation trigger
+        updatePrice();
+    </script>
+</body>
+</html>
